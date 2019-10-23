@@ -1,0 +1,29 @@
+<ion-view view-title="Bancos Solidários">
+  <ion-content style="background-color:#282c5c; ">
+
+    <div id="Schedule" data-ix="slide-up-section" class="content-section midnight-blue-3" style="opacity: 1; transform: translateX(0px) translateY(0px) translateZ(0px); transition: opacity 1000ms, transform 500ms;">
+      <div class="content-wrapper w-container">
+        <div class="speakers-container">
+          <div class="w-dyn-list">
+            <div class="w-dyn-items w-row">
+
+              <div class="w-dyn-item w-col w-col-3" ng-repeat="speaker in speakers">
+                <a imageonload="images/speaker/{{speaker.id}}.{{speaker.image_format}}" href="#/app/speaker/{{speaker.id}}" class="speaker-thumbnail w-inline-block">
+                  <div class="speaker-header">
+                    <div class="mini-title white">{{speaker['title' + lang]}}</div>
+                    <h3 class="heading-3 hover">{{speaker['name']}}</h3>
+                    <div class="special-underline inline-block"></div>
+                    <div class="learn-more">{{"SPEAKERS_BUTTON" | translate}}</div>
+                  </div>
+                <!--  <div style="background-image:url('{{url_base}}images/speaker/{{speaker.id}}_filtered.{{speaker.image_filtered_format}}')" class="speaker-dual-tone-overlay"></div>-->
+                </a>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

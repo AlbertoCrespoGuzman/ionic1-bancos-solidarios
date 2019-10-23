@@ -1,0 +1,24 @@
+<ion-modal-view style="padding-bottom:10px; height: 100%">
+  <div  tabindex="-1" role="dialog" >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header"  style="padding: 0px">
+          <div class="form-header" id="modal_background_image" style="background-image: url('img/modal/event_modal_{{myEvent.category[0].id}}.jpg">
+            <a type="button" class="close-pop-up" ng-click="closeEventDialog()">X</a>
+            <div class="mini-title white modal-time" style="transition: opacity 1000ms; opacity: 1;">
+              {{myTimetable['name' + lang]}}</div>
+            <h4 class="modal-title" id="exampleModalLabel">{{myEvent['name' + lang]}}</h4>
+          </div>
+        </div>
+        <div class="modal-body" >
+          <h4 class="modal-room" style="color: #707e90;padding-left: 7%">{{myEvent.room[0]['name']}}</h4>
+          <h4 class="modal-category" style="color: #707e90;padding-left: 7%">{{myEvent.category[0]['name' + lang]}}</h4>
+          <p class="modal-description" style="padding-left: 7%">{{myEvent['description' + lang]}}</p>
+        </div>
+        <div class="modal-footer" style="background-color: #f9f9f9; margin: auto 0">
+        <button type="button" style="background: {{myEvent.category[0].color}}" class="button boxed w-inline-block" data-dismiss="modal" id="modal_button" ng-click="closeEventDialog()">{{"DIALOG_CLOSE" | translate}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</ion-modal-view>

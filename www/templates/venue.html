@@ -1,0 +1,77 @@
+<ion-view view-title="Bancos Solidários">
+  <ion-content style="background-color:#282c5c; ">
+    <div id="venue" class="venue">
+      <div id="map" class="map-box" >
+        <div data-disable-scroll="1" data-disable-touch="1" class="map w-widget w-widget-map"></div>
+      </div>
+      <div class="venue-details midnight-blue-3" >
+        <div class="floated-right-details-box">
+          <div class="header-box left-justified">
+            <div class="mini-title">{{"VENUE_TITLE" | translate }}</div>
+            <h2>{{venue.name | breakInMiddleFilter  }}</h2>
+            <div class="underline crimson"></div>
+            <div>
+              <div class="paragraph-box">
+                <p>{{venue['description' +lang]}}</p>
+              </div>
+            </div>
+          </div>
+          <div class="venue-details-item">
+            <div class="mini-title">{{"VENUE_ADDRESS" | translate}}</div>
+            <div class="more-info-box w-clearfix"><img src="img/Pin-1.png" width="10" class="icon">
+              <p class="paragraph small">{{venue.address}}</p>
+            </div>
+          </div>
+          <div class="venue-details-item">
+            <div class="mini-title">{{"VENUE_MORE_INFORMATION" | translate}}</div>
+            <div class="more-info-box bottom-border w-clearfix"><img src="img/Phone.png" width="13" class="icon">
+              <p class="paragraph small">{{venue.phone}}</p>
+            </div>
+            <div class="more-info-box top-border-line w-clearfix"><img src="img/Email.png" width="13" class="icon">
+              <p class="paragraph small">{{venue.email}}</p>
+            </div>
+          </div>
+          <div class="venue-details-item">
+            <div class="mini-title">{{"VENUE_FOLLOW" | translate}}</div>
+            <div class="social-icons-box">
+
+              <a ng-if="venue.facebook.length > 0" href="#" ng-click="openBrowser(venue.facebook)" class="mini-social-icon w-inline-block">
+                <img src="img/Fb-outline.png" class="bg-icon">
+              </a>
+
+
+              <a ng-if="venue.twitter.length > 0" href="#" ng-click="openBrowser(venue.twitter)"  class="mini-social-icon twitter w-inline-block">
+                <img src="img/Twitter-fill-2_1.png" class="bg-icon twitter">
+              </a>
+
+              <a ng-if="venue.linkdin.length > 0" href="#" ng-click="openBrowser(venue.linkdin)"  class="mini-social-icon linkedin w-inline-block">
+                <img src="img/Linkedin-fill-2.png" class="bg-icon linkedin">
+              </a>
+
+              <a ng-if="venue.instagram.length > 0" href="#" ng-click="openBrowser(venue.instagram)" class="mini-social-icon instagram w-inline-block">
+                <img src="img/Instagram-fill.png" class="bg-icon instagram">
+              </a>
+
+              <a ng-if="venue.pinterest.length > 0" href="#" ng-click="openBrowser(venue.pinterest)" class="mini-social-icon pinterest w-inline-block">
+                <img src="img/Pinterest-outline.png" class="bg-icon pinterest">
+              </a>
+
+              <a ng-if="venue.googleplus.length > 0" href="#" ng-click="openBrowser(venue.googleplus)" class="mini-social-icon google-plus w-inline-block">
+                <img src="img/Google-plus-outline.png" class="bg-icon google-plus">
+              </a>
+
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </ion-content>
+  <script type="javascript">
+    function openDirections(){
+      window.open('https://www.google.com/maps/search/?api=1&query=Av.+Washington+Soares,+999+Edson+Queiroz,+Fortaleza+CE+brazil', '_system', 'location=yes');
+    }
+
+  </script>
+</ion-view>

@@ -1,0 +1,24 @@
+<ion-view view-title="Bancos Solidários">
+  <ion-content style="background-color:#282c5c; ">
+    <div id="Sponsors" data-ix="slide-up-section" class="content-section midnight-blue">
+      <div ng-repeat="category in sponsorcategories" class="sponsors-container">
+          <div class="mini-title" style="transition: opacity 1000ms; opacity: 1;">{{category['name' + lang]}}</div>
+            <div ng-if="$parent.$index == 0 && society.length > 0" ng-repeat="s in society" class="sponsor-box">
+              <a href="#" ng-click="openBrowser(s.url)">
+              <img imageonloadsrc="images/sponsor/{{s.id}}.{{s.image_format}}" src="images/sponsor/{{s.id}}.{{s.image_format}}"  class="sponsor-logo">
+              </a>
+            </div>
+            <div ng-if="$parent.$index == 1 && institutional.length > 0" ng-repeat="s in institutional" class="sponsor-box">
+              <a href="#" ng-click="openBrowser(s.url)">
+              <img imageonloadsrc="images/sponsor/{{s.id}}.{{s.image_format}}" src="images/sponsor/{{s.id}}.{{s.image_format}}" class="sponsor-logo">
+              </a>
+            </div>
+            <div ng-if="$parent.$index == 2 && sponsors.length > 0" ng-repeat="s in sponsors" class="sponsor-box">
+              <a  href="#" ng-click="openBrowser(s.url)">
+              <img imageonloadsrc="images/sponsor/{{s.id}}.{{s.image_format}}" src="images/sponsor/{{s.id}}.{{s.image_format}}"  class="sponsor-logo">
+                <a/>
+            </div>
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

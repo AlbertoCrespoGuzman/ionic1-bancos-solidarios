@@ -1,0 +1,70 @@
+<ion-side-menus enable-menu-with-back-views="false" style="background-color:#282c5c; ">
+  <ion-side-menu-content style="background-color:#282c5c; ">
+    <ion-nav-bar class="bar-royal">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left">
+        </button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="mainContent"></ion-nav-view>
+  </ion-side-menu-content>
+
+  <ion-side-menu side="left" style="background-color:#282c5c; ">
+    <ion-header-bar class="bar-positive">
+      <img src="img/logo.png" class="img-responsive" style="height:33px;">
+    </ion-header-bar>
+    <ion-content  style="margin-bottom: 60px;background-color:#282c5c;">
+      <ion-list  style="padding-bottom: 120px;background-color:#282c5c;">
+        <ion-item class="menu-app"  style="margin-bottom: 0pc" ng-click="toogleLanguage()">
+          {{ 'LANGUAGE_SIDEBAR' | translate }}
+          <ion-list ng-if="language_selected" style="margin-top: 20px; padding-top: 20px; ">
+            <div style="padding:10px;border: 1px solid white" class="menu-app" style="margin-bottom: 0px" ng-click="changeLanguage(0)">
+              {{ 'LANGUAGE_PORT_SIDEBAR' | translate }}
+            </div>
+            <div style="padding:10px;border: 1px solid white" class="menu-app" style="margin-bottom: 0px" ng-click="changeLanguage(1)">
+              {{ 'LANGUAGE_ESP_SIDEBAR' | translate }}
+            </div>
+            <div style="padding:10px;border: 1px solid white" class="menu-app" style="margin-bottom: 0px" ng-click="changeLanguage(2)">
+              {{ 'LANGUAGE_ENG_SIDEBAR' | translate }}
+            </div>
+          </ion-list>
+        </ion-item>
+        <ion-item class="menu-app" style="margin-bottom: 0px;" menu-close href="#/app/home">
+          {{ 'INTRO_SIDEBAR' | translate }}
+        </ion-item>
+        <ion-item class="menu-app" style="margin-bottom: 0px;" menu-close href="#/app/blog">
+          {{ 'NEWS_SIDEBAR' | translate }}
+        </ion-item>
+        <ion-item class="menu-app" style="margin-bottom: 0px" menu-close href="#/app/meeting">
+          {{ 'MEETING_SIDEBAR' | translate }}
+        </ion-item>
+        <ion-item class="menu-app" style="margin-bottom: 0px" menu-close href="#/app/calendar/0">
+          {{ 'CALENDAR_SIDEBAR' | translate }}
+        </ion-item>
+
+        <ion-item class="menu-app"  style="margin-bottom: 0px" menu-close href="#/app/speakers">
+          {{ 'SPEAKERS_SIDEBAR' | translate }}
+        </ion-item>
+        <ion-item class="menu-app" style="margin-bottom: 0px" menu-close href="#/app/gallery">
+          {{ 'GALLERY_SIDEBAR' | translate }}
+        </ion-item>
+        <ion-item class="menu-app" style="margin-bottom: 0px" menu-close href="#/app/venue">
+          {{ 'VENUE_SIDEBAR' | translate }}
+        </ion-item>
+        <ion-item class="menu-app" style="margin-bottom: 0px" menu-close href="#/app/live">
+          {{ 'VIDEOS_SIDEBAR' | translate }}
+        </ion-item>
+        <ion-item class="menu-app" style="margin-bottom: 0px" menu-close href="#/app/themes">
+          {{ 'THEMES_SIDEBAR' | translate }}
+        </ion-item>
+        <ion-item class="menu-app" style="margin-bottom: 0px" menu-close href="#/app/sponsors">
+          {{ 'SPONSORS_SIDEBAR' | translate }}
+        </ion-item>
+
+      </ion-list>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

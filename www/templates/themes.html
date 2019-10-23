@@ -1,0 +1,29 @@
+<ion-view view-title="Bancos Solidários">
+  <ion-content style="background-color:#282c5c; ">
+
+        <div id="Features" data-ix="slide-up-section" class="content-section">
+          <div class="content-wrapper w-container">
+            <div class="header-box">
+              <div class="mini-title">{{"THEMES_TITLE" | translate}}</div>
+              <h2>{{"THEMES_TITLE" | translate}}</h2>
+              <div class="underline crimson"></div>
+              <!-- <div class="paragraph-box _80-percent-centered">
+                <p>Etiam tristique, metus pretium rutrum elementum, risus tortor euismod urna, porta felis felis vel dui in bibendum justo vel pellentesque accumsan.</p>
+              </div> -->
+            </div>
+            <div class="features-container">
+              <div class="flex-wrapper">
+                 <div class="feature _{{themes_index}} w-clearfix" ng-repeat="theme in themes" >
+                  <div class="feature-icon-box"> <img src="img/icon-logo-2.png" width="48" class="feature-icon"> </div>
+                  <div class="feature-text">
+                    <div class="title" style="font-family: Montserrat, sans-serif;">{{theme['title' + lang] }}</div>
+                    <p class="paragraph small" style="font-family: Muli, sans-serif;">{{theme['description' + lang]}}</p>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+  </ion-content>
+</ion-view>

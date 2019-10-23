@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<!-- saved from url=(0072)https://s.codepen.io/ionic/fullembedgrid/hqcju?type=embed&animations=run -->
+<html ng-app="ionicApp"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>
+  
+  <link rel="shortcut icon" type="image/x-icon" href="https://production-assets.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico">
+  <link rel="mask-icon" type="" href="https://production-assets.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111">
+  <title>CodePen - Checkbox: Nightly</title>
+  
+  
+  
+  
+      <style>
+      body {
+  cursor: url('http://ionicframework.com/img/finger.png'), auto;
+}
+    </style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+  <script>
+  if (document.location.search.match(/type=embed/gi)) {
+    window.parent.postMessage("resize", "*");
+  }
+</script>
+
+</head>
+
+<body translate="no" ng-controller="MainCtrl" class="grade-a platform-browser platform-linux platform-ready">
+
+  
+  
+    
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    
+    <title>Checkboxes</title>
+
+    <link href="./ionic.css" rel="stylesheet">
+    <script src="./ionic.bundle.js"></script>
+  
+
+  
+    
+    <ion-header-bar class="bar-positive bar bar-header">
+      <h1 class="title">Checkboxes</h1>
+    </ion-header-bar>
+             
+    <ion-content class="scroll-content ionic-scroll  has-header"><div class="scroll" style="transform: translate3d(0px, 0px, 0px) scale(1);">
+      
+      <div class="list">
+        
+        <!-- ngRepeat: item in devList --><label class="item item-checkbox ng-not-empty ng-valid" ng-repeat="item in devList" ng-model="item.checked" ng-checked="item.checked"><div class="checkbox checkbox-input-hidden disable-pointer-events checkbox-circle"><input type="checkbox" ng-model="item.checked" ng-checked="item.checked" class="ng-untouched ng-valid ng-empty ng-dirty ng-valid-parse" value="on" style=""><i class="checkbox-icon"></i></div><div class="item-content disable-pointer-events" ng-transclude=""><span class="ng-binding">
+          HTML5
+        </span></div></label><!-- end ngRepeat: item in devList --><label class="item item-checkbox ng-not-empty ng-valid" ng-repeat="item in devList" ng-model="item.checked" ng-checked="item.checked"><div class="checkbox checkbox-input-hidden disable-pointer-events checkbox-circle"><input type="checkbox" ng-model="item.checked" ng-checked="item.checked" class="ng-untouched ng-valid ng-dirty ng-valid-parse ng-empty" value="on" style=""><i class="checkbox-icon"></i></div><div class="item-content disable-pointer-events" ng-transclude=""><span class="ng-binding">
+          CSS3
+        </span></div></label><!-- end ngRepeat: item in devList --><label class="item item-checkbox ng-not-empty ng-valid" ng-repeat="item in devList" ng-model="item.checked" ng-checked="item.checked"><div class="checkbox checkbox-input-hidden disable-pointer-events checkbox-circle"><input type="checkbox" ng-model="item.checked" ng-checked="item.checked" class="ng-untouched ng-valid ng-not-empty ng-dirty ng-valid-parse" value="on" style=""><i class="checkbox-icon"></i></div><div class="item-content disable-pointer-events" ng-transclude=""><span class="ng-binding">
+          JavaScript
+        </span></div></label><!-- end ngRepeat: item in devList -->
+        
+        <div class="item">
+          <pre ng-bind="devList | json" class="ng-binding">[
+  {
+    "text": "HTML5",
+    "checked": false
+  },
+  {
+    "text": "CSS3",
+    "checked": false
+  },
+  {
+    "text": "JavaScript",
+    "checked": true
+  }
+]</pre> 
+        </div>
+        
+        <div class="item item-divider"> 
+          Notifications
+        </div>
+        
+        <label class="item item-checkbox ng-not-empty ng-valid" ng-model="pushNotification.checked" ng-change="pushNotificationChange()"><div class="checkbox checkbox-input-hidden disable-pointer-events checkbox-circle"><input type="checkbox" ng-model="pushNotification.checked" ng-change="pushNotificationChange()" class="ng-pristine ng-untouched ng-valid ng-not-empty"><i class="checkbox-icon"></i></div><div class="item-content disable-pointer-events" ng-transclude=""><span>
+          Push Notifications
+        </span></div></label>
+        
+        <div class="item">
+          <pre ng-bind="pushNotification | json" class="ng-binding">{
+  "checked": true
+}</pre> 
+        </div>
+        
+        <label class="item item-checkbox ng-not-empty ng-valid" ng-model="emailNotification" ng-true-value="&#39;Subscribed&#39;" ng-false-value="&#39;Unubscribed&#39;"><div class="checkbox checkbox-input-hidden disable-pointer-events checkbox-circle"><input type="checkbox" ng-model="emailNotification" ng-true-value="&#39;Subscribed&#39;" ng-false-value="&#39;Unubscribed&#39;" class="ng-pristine ng-untouched ng-valid ng-not-empty"><i class="checkbox-icon"></i></div><div class="item-content disable-pointer-events" ng-transclude=""><span>
+          Newsletter
+        </span></div></label>
+        <div class="item">
+          <pre ng-bind="emailNotification | json" class="ng-binding">"Subscribed"</pre> 
+        </div>
+        
+      </div>
+      
+    </div><div class="scroll-bar scroll-bar-v"><div class="scroll-bar-indicator scroll-bar-fade-out" style="transform: translate3d(0px, 0px, 0px) scaleY(1); height: 311px;"></div></div></ion-content>
+    
+  
+
+    <script src="./stopExecutionOnTimeout-58d22c749295bca52f487966e382a94a495ac103faca9206cbd160bdf8aedf2a.js"></script>
+
+  
+    <script>
+    angular.module('ionicApp', ['ionic']).controller('MainCtrl', function ($scope) {
+    $scope.devList = [
+        {
+            text: 'HTML5',
+            checked: true
+        },
+        {
+            text: 'CSS3',
+            checked: false
+        },
+        {
+            text: 'JavaScript',
+            checked: false
+        }
+    ];
+    $scope.pushNotificationChange = function () {
+        console.log('Push Notification Change', $scope.pushNotification.checked);
+    };
+    $scope.pushNotification = { checked: true };
+    $scope.emailNotification = 'Subscribed';
+});
+  //# sourceURL=pen.js
+  </script>
+
+  
+  
+
+
+
+ </body></html>

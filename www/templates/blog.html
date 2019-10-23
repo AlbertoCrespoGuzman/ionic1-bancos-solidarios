@@ -1,0 +1,69 @@
+<ion-view view-title="Bancos Solidários">
+  <ion-content style="background-color:#282c5c; ">
+
+    <div data-ix="actions-for-hero-section" class="header-section" >
+      <div class="content-wrapper w-container">
+        <div class="header-box left-justified">
+          <div class="mini-title">{{"NEWS_SIDEBAR" | translate}}</div>
+          <h2>{{"BLOG_TITLE" | translate}}</h2>
+          <div class="underline crimson"></div>
+          <div class="paragraph-box _60-percent-left-justified">
+            <p>{{"BLOG_SUBTITLE" | translate}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content-section midnight-blue-3">
+      <div class="content-wrapper w-container">
+
+
+        <div class="section-title w-clearfix">
+          <div class="section-line"></div>
+          <div class="section-title-text">
+            <h6 class="heading-6 on-section-title">{{"BLOG_TITLE" | translate}}</h6>
+          </div>
+        </div>
+        <div class="w-dyn-list">
+          <div class="w-dyn-items">
+            <div class="w-dyn-item" ng-repeat="post in blog" ng-if="blog.length > 0">
+              <div class="post-preview-box">
+                <a href="#/app/post/{{post.id}}" style="background-image:url({{( post.images == null) ? url_base + 'images/blog/default.jpg': url_base +
+                'images/blog/' + post.images[0].id + '.' + post.images[0].format_image}}" class="post-preview-image w-inline-block">
+
+                  <div style="background-image:url({{(post.images == null) ? url_base + 'images/blog/default.jpg': url_base +
+                'images/blog/' + post.images[0].id + '.' + post.images[0].format_image}}"  class="dual-tone-image"></div>
+                </a>
+                <div class="post-preview-details">
+                  <a href="#/app/post/{{post.id}}" class="mini-title-link-box w-inline-block">
+                    <div>{{post['category' + lang]}}</div>
+                  </a>
+                  <a href="#/app/post/{{post.id}}" class="w-inline-block">
+                    <h4 class="heading-4 hover">{{post['title' + lang]}}</h4>
+                  </a>
+                  <div class="special-underline"></div>
+                  <div>
+                    <a href="#/app/post/{{post.id}}" class="mini-link-box w-inline-block">
+                      <div>{{"BLOG_LABEL" | translate}}</div>
+                    </a>
+                    <div class="separator"></div>
+                    <div class="mini-text-box">
+                      <div class="mini-title">{{post.date * 1000 | date:"dd/MM/yyyy"}}</div>
+                    </div>
+                  </div>
+                  <div class="paragraph-box top-border">
+                    <p class="paragraph small">{{post['description' + lang] | cropCustomFilter:100}}</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div ng-if="blog.length == 0">
+              <center><h2>{{"BLOG_EMPTY" | translate}}</h2></center>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

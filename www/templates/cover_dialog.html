@@ -1,0 +1,15 @@
+<ion-modal-view>
+  <ion-header-bar style="background-color: #282c5c; ">
+    <h1 class="title" style="font-size: 12px;">{{"PLAY_VIDEO" | translate}}</h1>
+    <div class="buttons">
+      <button class="button button-clear" style="color: white" ng-click="closeCoverDialog()">{{"DIALOG_CLOSE" | translate}}</button>
+    </div>
+  </ion-header-bar>
+  <ion-content style="background-color: #282c5c; ">
+<center>
+
+    <iframe width="100%" height="300" ng-src="{{coverR[0].video_url | youtubeUrlFilter}}">
+</iframe>
+</center>
+  </ion-content>
+</ion-modal-view>

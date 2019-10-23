@@ -1,0 +1,45 @@
+<ion-view view-title="Bancos Solidários" style="font-family: Raleway, sans-serif;">
+  <ion-content style="background-color:#282c5c; ">
+    <div ng-repeat="cover in coverR" imageonload="images/cover/{{cover.id}}.{{cover.image_format}}" class="hero-section-1">
+
+      <div class="content-wrapper w-container">
+        <div class="hero-text">
+          <div data-ix="hero-block-1-initial-appearance" class="hero-block-1">
+            <br>
+            <br>
+            <h1 style="white-space: pre;"><strong>{{cover['title' + lang] | breakInMiddleFilter}}</strong></h1>
+          </div>
+          <div data-ix="underline-initial-appearance" class="underline"></div>
+          <div data-ix="hero-block-2-initial-appearance" class="hero-block-2">
+            <br>
+            <br>
+            <div class="cursive-text" style="white-space: pre;">{{cover['subtitle' + lang] | breakInMiddleFilter}}</div>
+            <div>
+              <br>
+              <br>
+              <div class="mini-columns-container">
+                <?php if($cover['video_url'] != '') {
+?>
+                <div class="mini-column right-border" ng-if="cover.video_url != ''">
+                  <a href="#" class="w-inline-block w-lightbox" ng-click="openCoverDialog()">
+                    <div class="mini-play-button"></div><img src="https://d3e54v103j8qbb.cloudfront.net/img/placeholder-thumb.svg" class="light-box-link-image hide">
+                    <div id="video_url" style="display: none">{{cover['video_url']}}</div>
+
+                  </a>
+                  <div>{{"PLAY_VIDEO" | translate}}</div>
+                </div>
+                <?php
+}
+?>
+                <div class="mini-column">
+                  <div>{{cover['date'  + lang]}}</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

@@ -1,0 +1,30 @@
+<ion-view view-title="Bancos Solidários">
+  <ion-content style="background-color:#282c5c; ">
+    <!-- <iframe width="560" height="315" src="https://www.youtube.com/embed/live_stream?channel=UCHQPZZsoLzaAWCc2Deal2tg" frameborder="0" allowfullscreen></iframe>
+     <iframe width="560" height="315" src="https://youtube.com/embed/live_stream?channel=UCHQPZZsoLzaAWCc2Deal2tg&enablejsapi=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+     <center><iframe width="560" height="315" src="https://www.youtube.com/embed/omv6J39vQpM" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe></center>-->
+    
+   <!--    https://www.facebook.com/paco.lima.58152/videos/235326940473178/  -->
+   <center ng-repeat="video in facebook_videos">
+
+      <h4><img src="img/live.gif" ng-if="video.live == true" width="7"> {{video.live == true ? ("LIVE_TITLE_LIVE_NOW" | translate) : ''}}  {{video['title' + lang]}}</h4>
+      <iframe   width="200" height="250" ng-src="{{getIframeSrcFacebook(video.url)}}" frameborder="0" allow="autoplay=true; encrypted-media" allowfullscreen>
+
+      </iframe>
+      <p>{{video.live == true ? '' : 'WAS_LIVE_AT'|translate}}{{video.created_at | date:'medium'}}</p>
+    </center>
+
+
+    <center ng-repeat="video in videos">
+
+      <h4><img src="img/live.gif" ng-if="video.snippet.liveBroadcastContent == 'live'" width="7"> {{video.snippet.liveBroadcastContent == 'live' ? ("LIVE_TITLE_LIVE_NOW" | translate) : ''}}  {{video.snippet.title}}</h4>
+      <iframe   width="200" height="250" ng-src="{{getIframeSrc(video.id.videoId, video.snippet.liveBroadcastContent == 'live' ? true : false)}}" frameborder="0" allow="autoplay=true; encrypted-media" allowfullscreen>
+
+      </iframe>
+      <p>{{video.snippet.liveBroadcastContent == 'live' ? '' : 'WAS_LIVE_AT'|translate}}{{video.snippet.publishedAt | date:'medium'}}</p>
+    </center>
+
+  </ion-content>
+
+</ion-view>
+

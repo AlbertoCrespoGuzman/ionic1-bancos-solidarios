@@ -1,0 +1,96 @@
+<ion-view view-title="Bancos Solidários">
+  <ion-content style="background-color:#282c5c; ">
+    <div data-ix="actions-for-hero-section"
+         style="background-image:url({{( post.images == null) ? url_base + 'images/blog/default.jpg': url_base +
+                'images/blog/' + post.images[0].id + '.' + post.images[0].format_image}}" class="header-section on-post">
+      <div style="background-image:url({{( post.images == null) ? url_base + 'images/blog/default.jpg': url_base +
+                'images/blog/' + post.images[0].id + '.' + post.images[0].format_image}}" class="dual-tone-image"></div>
+    </div>
+    <div class="content-section midnight-blue-2">
+      <div class="content-wrapper w-container">
+        <div class="post-container">
+          <div class="header-box left-justified">
+            <a  class="mini-link-box w-inline-block">
+              <div class="mini-title">{{post['category' + lang]}}</div>
+            </a>
+            <h2>{{post['title' + lang]}}</h2>
+            <div class="underline crimson"></div>
+          </div>
+          <div class="w-clearfix">
+
+            <div>
+              <img src="{{( post.images == null) ? url_base + 'images/blog/default.jpg': url_base +
+                'images/blog/' + post.images[0].id + '.' + post.images[0].format_image}}">
+            </div>
+            <div class="post-details-box">
+              <a href="#" class="mini-link-box w-inline-block">
+                <div>{{"BLOG_LABEL" | translate}}</div>
+              </a>
+              <div class="separator blue"></div>
+              <div class="mini-text-box">
+                <div class="mini-title">{{post.date * 1000 | date:"dd/MM/yyyy"}}</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="w-richtext">
+            {{post['description' + lang]}}
+
+          </div>
+        </div>
+        <br>
+        <center ng-if="post.video_url != null && post.video_url.length > 0">
+          <iframe width="80%" height="450"
+                  src="{{post.video_url | youtubeUrlFilter }}">
+          </iframe>
+        </center>
+        <br>
+        <br>
+        <center ng-if="inverted_images != null && inverted_images.length > 0">
+        <ion-slide-box slide-interval="3000">
+          <ion-slide ng-repeat="img in inverted_images">
+            <img class="img-responsive" src="{{url_base }}/images/blog/{{img.id}}.{{img.format_image}}" height="200"/>
+          </ion-slide>
+        </ion-slide-box>
+        </center>
+        <div>
+          <div class="end-dots">...</div>
+        </div>
+      </div>
+    </div>
+    <div class="content-section midnight-blue-3">
+      <div class="content-wrapper w-container">
+        <div class="section-title w-clearfix">
+          <div class="section-line"></div>
+          <div class="section-title-text">
+            <h6 class="heading-6 on-section-title">{{"BLOG_LASTEST_POSTS_TITLE" | translate}}</h6>
+          </div>
+        </div>
+        <div class="dynamic-list-wrapper w-dyn-list">
+          <div class="w-dyn-items w-row" style="width: 100%">
+
+            <div class="w-dyn-item w-col w-col-4" ng-repeat="last in lastestPosts">
+              <div class="post-preview-box">
+                <a  href="#/app/post/{{last.id}}" style="background-image:url({{(last.images == null) ? url_base + 'images/blog/default.jpg': url_base +
+                'images/blog/' + last.images[0].id + '.' + last.images[0].format_image}}" class="post-preview-image small w-inline-block">
+                  <div style="background-image:url({{(last.images == null) ? url_base + 'images/blog/default.jpg': url_base +
+                'images/blog/' + last.images[0].id + '.' + last.images[0].format_image}}" class="dual-tone-image"></div>
+                </a>
+                <div class="post-preview-details">
+                  <a href="#/app/post/{{last.id}}" class="mini-title-link-box w-inline-block">
+                    <div>{{last['category' + lang]}}</div>
+                  </a>
+                  <a href="#/app/post/{{last.id}}" class="w-inline-block">
+                    <h4 class="heading-4 hover">{{last['title' + lang]}}</h4>
+                  </a>
+                  <div class="special-underline"></div>
+                  <div>
+                    <a href="#/app/post/{{last.id}}" class="mini-link-box w-inline-block">
+                      <div>{{"BLOG_LABEL" | translate}}</div>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+  </ion-content>
+</ion-view>

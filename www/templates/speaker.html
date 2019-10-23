@@ -1,0 +1,43 @@
+<ion-view view-title="Bancos Solidários">
+  <ion-content style="background-color:#282c5c; ">
+
+    <div id="Speaker-1" class="speaker w-clearfix" ng-repeat="speaker in speakerR">
+      <div class="speaker-picture-box w-clearfix">
+        <div  imageonload="images/speaker/{{speaker.id}}.{{speaker.image_format}}" class="speaker-picture-bg _1"></div>
+        <div class="speaker-elements _1">
+          <div data-ix="display-none-social-icons" class="social-icons w-clearfix">
+            <div ng-if="speaker.facebook != ''" class="speaker-1-social-icon-1 w-clearfix" data-ix="social-icon-initial-appearance" style="opacity: {{showButton ? '1' : '0'}}; transform: translateX(0px) translateY({{showButton ? '20px' : '0px'}}) translateZ(0px); transform-style: preserve-3d; transition: opacity 500ms, transform 500ms;">
+              <a  href="#" ng-click="openBrowser(speaker.facebook)" class="social-icon facebook w-inline-block"></a></div>
+            <div ng-if="speaker.twitter != ''"  class="speaker-1-social-icon-2 w-clearfix"  data-ix="social-icon-initial-appearance" style="opacity: {{showButton ? '1' : '0'}}; transform: translateX(0px) translateY({{showButton ? '20px' : '0px'}}) translateZ(0px); transform-style: preserve-3d; transition: opacity 500ms, transform 500ms;">
+              <a href="#" ng-click="openBrowser(speaker.twitter)" class="social-icon twitter w-inline-block" ></a></div>
+            <div ng-if="speaker.link != ''" class="speaker-1-social-icon-3 w-clearfix"  data-ix="social-icon-initial-appearance" style="opacity: {{showButton ? '1' : '0'}}; transform: translateX(0px) translateY({{showButton ? '20px' : '0px'}}) translateZ(0px); transform-style: preserve-3d; transition: opacity 500ms, transform 500ms;">
+              <a href="#" ng-click="openBrowser(speaker.link)" class="social-icon link w-inline-block" ></a></div>
+    </div>
+    <a href="#" data-ix="show-social-icons-1" class="plus-sign-box w-inline-block" ng-click="toggleButton()">
+      <div class="plus-sign">
+        <div class="plus-sign-vertical-line" style="transform-style: preserve-3d; transition: transform 500ms; transform: rotateX(0deg) rotateY(0deg) rotateZ({{showButton ? '135deg' : '0deg'}});"></div>
+        <div class="plus-sign-horizontal-line" style="transform-style: preserve-3d; transition: transform 500ms; transform: rotateX(0deg) rotateY(0deg) rotateZ({{showButton ? '135deg' : '0deg'}});"></div>
+      </div>
+    </a>
+    </div>
+    <div imageonload="images/speaker/{{speaker.id}}_filtered.{{speaker.image_filtered_format}}" class="speaker-picture"></div>
+    </div>
+    <div class="speaker-description-box" style="padding-bottom:50px;">
+      <div class="header-box left-justified">
+        <div class="mini-title">{{speaker['title' + lang]}}</div>
+        <h2>{{speaker.name}}</h2>
+        <div class="underline crimson"></div>
+        <!-- <div class="subtitle">This is some text inside of a div block.</div> -->
+        <div>
+          <div class="paragraph-box _60-percent">
+            <div class="w-richtext">
+              <p >{{speaker['description' + lang]}}</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </ion-content>
+</ion-view>

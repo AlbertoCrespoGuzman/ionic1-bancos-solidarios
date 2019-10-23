@@ -1,0 +1,83 @@
+<ion-view view-title="Bancos Solidários">
+  <ion-content style="background-color:#282c5c; ">
+
+    <div id="Schedule" data-ix="slide-up-section" class="content-section">
+      <div class="content-wrapper w-container">
+        <div class="header-box">
+          <div class="mini-title">{{"CALENDAR_MINI_TITLE"| translate}}</div>
+          <h2>{{"CALENDAR_TITLE"| translate}}</h2>
+          <div class="underline crimson"></div>
+          <div class="paragraph-box _80-percent-centered">
+            <p>{{"CALENDAR_DESCRIPTION"| translate}}</p>
+          </div>
+        </div>
+        <div class="content-box">
+          <div data-duration-in="300" data-duration-out="100" class="tabs_solidarios w-tabs">
+            <div class="tabs-menu w-tab-menu">
+
+              <a ng-repeat="day in days" data-w-tab="Tab {{$index + 1}}" id="tab_{{day.id}}" class="tab-link w-inline-block w-tab-link {{tabDays[$index] ? 'w--current' : ''}}" ng-click="tabsChange($index)">
+                <div>{{day['name' + lang]}}</div>
+              </a>
+
+            </div>
+            <div class="tabs-content w-tab-content">
+
+
+              <div ng-repeat="day in days" data-w-tab="Tab {{$index + 1}}" class="tab-pane w-tab-pane {{$index == currentTab ? 'w--tab-active' : ''}}" ng-class="tabDays[$index] ? 'w--tab-active' : ''">
+                <div>
+                  <div class="expand-box-container activity-description" >
+
+                      <p class="paragraph small" ng-repeat="category in categories">
+                        <label class="checkbox_container" style="font-size:15px">{{category['name' + lang]}}
+                          <input type="checkbox" id="checkbox_{{category.id}}__{{day.id}}"
+
+                                 ng-click="checkboxChange({{category.id}}, {{day.id}})"
+                                 checked>
+                          <span class="checkbox_checkmark" style="background-color:{{category.color}}"></span>
+                        </label>
+
+                      </p>
+                  </div>
+
+                  <div class="expand-box-container" ng-repeat="timetable in day.timetable">
+                    <div class="activity-time">
+                      <div class="time-text" style="font-size: 14px">{{timetable['name' + lang]}}</div>
+                    </div>
+
+
+                      <div ng-click="openEventDialog({{event.id}})" ng-if="timetable.type == 1" ng-repeat="event in timetable.event" class="activity-description category_id_{{event.category[0].id}}" style="  margin-right: 10px; background-color: {{event.category[0].color}} ;padding:15px">
+
+                        <div style="border-left:5px solid white; left:0; height: 90%">
+                          <h5 style="font-size: 20px;  margin-left: 10px; margin-top: 10px; font-family: Raleway, sans-serif;color: white">{{event['name' + lang]}}</h5>
+                          <p style=" font-size: 15px;  margin-left: 10px;font-family: Raleway, sans-serif;color:#2B3157; font-weight: bold; ">
+                            {{event.category[0]['name' + lang]}}: {{event.room[0].name}}</p>
+                          <p style="   font-size: 13px;text-align:bottom; margin-left: 10px;font-family: Raleway, sans-serif;color:white; font-weight: lighter; ">{{"SPEAKERS_BUTTON" | translate}}
+                            <img src="img/search-solid.svg" height="15" >
+                          </p>
+
+                        </div>
+
+                      </div>
+
+                    <div ng-if="timetable.type != 1" ng-repeat="event in timetable.event" class="activity-description" style="text-align: center;font-size: 15px; ">
+                      <h5 style=" margin-left: 10px; margin-top: 10px; font-family: Raleway, sans-serif;color: white">{{event['name'+ lang]}} </h5>
+                    </div>
+
+                  </div>
+
+
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <!--   <div class="button-special-box">
+             <a data-ix="show-pop-up-on-click-2" class="button boxed w-inline-block">
+               <div>DOWNLOAD BROCHURE</div>
+             </a>
+           </div> -->
+      </div>
+    </div>
+  </ion-content>
+</ion-view>

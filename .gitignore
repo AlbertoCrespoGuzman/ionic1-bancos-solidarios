@@ -1,0 +1,6 @@
+google-services.json
+my-release-key.keystore
+node_modules/*
+package-lock.json
+platforms/*
+

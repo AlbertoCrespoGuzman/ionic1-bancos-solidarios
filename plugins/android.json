@@ -1,0 +1,25 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.ionicframework.confusion699917"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "palmaslab.bancossolidarios.alberto"
+    }
+  },
+  "dependent_plugins": {
+    "cordova-support-google-services": {
+      "PACKAGE_NAME": "com.ionicframework.confusion699917"
+    },
+    "phonegap-plugin-multidex": {
+      "PACKAGE_NAME": "com.ionicframework.confusion699917"
+    }
+  }
+}

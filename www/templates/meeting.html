@@ -1,0 +1,41 @@
+  <ion-view view-title="Bancos Solidários">
+  	<ion-content style="background-color:#282c5c; ">
+  <div id="Intro" data-ix="slide-up-section" class="content-section">
+    <div class="content-wrapper w-container">
+      <div class="header-box">
+        <div class="mini-title"></div>
+        <h2 style="white-space: pre;">{{introduction['title' + lang] | breakInMiddleFilter}}</h2>
+        <div class="underline crimson"></div>
+        <div class="paragraph-box _80-percent-centered">
+          <p>{{introduction['subtitle' + lang]}}</p>
+        </div>
+      </div>
+      <div class="columns-container w-clearfix">
+        <div class="column-text-box left">
+          <p class="w-clearfix"><span class="important-text"><strong>{{introduction['description' + lang] | firstLetterFilter}}</strong></span>{{introduction['description' + lang] | withoutFirstLetterFilter}}
+        <!--  <blockquote>This template comes with Psd files, icons to fully customize it...</blockquote>
+          <p>We hope you enjoy it using it as much as we did building it. Cheers!</p><img src="images/Signature-color.png" class="signature">--> </div>
+        <div class="grid-container w-clearfix">
+<!--
+<?php
+  $index = 1;
+  while($row = mysqli_fetch_assoc($introduction_images)){
+?>
+          <?php echo(($index % 2 != 0) ? ' -->
+          <div ng-repeat="imgs in introduction_images" class='intro-image-grid' ng-if="$index % 2 == 0" style="opacity: 1; transform: translateX(0px) translateY(0px) translateZ(0px); transform-style: preserve-3d; transition: opacity 1000ms, transform 1200ms;">
+            <div   data-ix="column-images-{{$index + 1}}-initial-appearance" ng-class="'column-image-' + {{$index + 1 }}">
+              <div ng-class="'column-image _' + {{$index + 1}}" style="background-image:url('{{baseURL}}../images/introduction/{{imgs.id}}.{{imgs.image_format}}')"></div>
+            </div>
+            <div data-ix="column-images-{{$index + 2}}-initial-appearance" ng-class="'column-image-' + {{$index + 2 }}">
+              <div ng-class="'column-image _' + {{$index + 2}}" style="background-image:url('{{baseURL}}../images/introduction/{{introduction_images[$index +1].id}}.{{introduction_images[$index +1].image_format}}')"></div>
+            </div>
+
+            </div>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+  </ion-content>
+  </ion-view>
